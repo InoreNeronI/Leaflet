@@ -1,0 +1,18 @@
+
+@import 'partial/mixin';
+@import 'partial/variables';
+
+body {
+  background: $color_standard;
+  color: rgba($color_primary, 0.4);
+  @include toggle($color_primary, $color_secondary);
+  header {
+    height: 10%
+  }
+  section {
+    height: 85%
+  }
+  footer {
+    height: 5%
+  }
+}

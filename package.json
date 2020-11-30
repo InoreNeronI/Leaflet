@@ -1,0 +1,22 @@
+{
+    "name": "frontend",
+    "version": "0.1.0",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.12.8",
+        "cross-env": "^7.0.2",
+        "parcel": "^2.0.0-nightly.462",
+        "sass": "^1.29.0"
+    },
+    "scripts": {
+        "build": "cross-env NODE_ENV=production parcel build layout-prod.html --dist-dir ./dist --no-source-maps",
+        "build-yarn": "yarn css && yarn js",
+        "postbuild-yarn": "cp -v layout-yarn.html dist",
+        "prebuild": "rm -fr .parcel-cache dist",
+        "prebuild-yarn": "rm -rv dist",
+        "prestart": "yarn prebuild",
+        "start": "cross-env NODE_ENV=development parcel layout-dev.html --dist-dir ./dist --no-autoinstall",
+        "css": "sass styles/main.scss dist/main.css",
+        "js": "babel scripts --ignore node_modules --out-dir dist"
+    }
+}

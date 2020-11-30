@@ -1,0 +1,14 @@
+
+
+@mixin toggle($cp, $cs) {
+  * {
+    &.dark {
+      background: $cp;
+      color: $cs;
+    }
+    &.light {
+      background: $cs;
+      color: $cp;
+    }
+  }
+}
