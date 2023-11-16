@@ -2,17 +2,26 @@
 @import 'partial/mixin';
 @import 'partial/variables';
 
-body {
-  background: $color_standard;
+@include body($color_primary,$color_secondary);
+
+body{
   color: rgba($color_primary, 0.4);
-  @include toggle($color_primary, $color_secondary);
+  background-color: $color_standard;
+
   header {
-    height: 10%
+    background-color: $color_primary;
+    height: 10%;
   }
+
+  #map { height: 780px; }
+
   section {
-    height: 85%
+    background-color: inherit;
+    height: 85%;
   }
+
   footer {
-    height: 5%
+    background-color: $color_secondary;
+    height: 5%;
   }
 }

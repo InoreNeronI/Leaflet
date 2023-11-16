@@ -1,14 +1,12 @@
-
-
-@mixin toggle($cp, $cs) {
-  * {
-    &.dark {
-      background: $cp;
-      color: $cs;
+@mixin body($cp,$cs){
+  body *{
+    &.dark{
+      background-color: $cp;
+      color:$cs;
     }
-    &.light {
-      background: $cs;
-      color: $cp;
+    &.light{
+      background-color: $cs;
+      color:$cp;
     }
   }
 }

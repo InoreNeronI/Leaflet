@@ -1,16 +1,16 @@
 
-#### `build-yarn` 
+### `build:npm` 
 
-~ builds `layout-yarn.html` in `./dist` with Babel.js and Sass libraries.
+~ builds script and style in `./dist` with Babel.js and Sass libraries.
 
-#### `build`
+### `build`
 
-~ builds `layout-prod.html` in `./dist` in 'prod' mode with Parcel.js
+~ builds `index.html` in `./dist` in 'prod' mode with Parcel.js
 
 ~ minimizes css, html & js
 
-#### `start`
+### `start`
 
-~ builds `layout-dev.html` in `./dist` in 'dev' mode with Parcel.js
+~ builds `index.html` in `./dist` in 'dev' mode with Parcel.js
 
-~ generates sourcemaps and launches dev server browsable at [http://localhost:1234/layout-dev.html](http://localhost:1234/layout-dev.html)
+~ generates sourcemaps and launches dev server browsable at [http://localhost:1234](http://localhost:1234)

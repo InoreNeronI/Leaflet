@@ -1,22 +1,32 @@
 {
-    "name": "frontend",
-    "version": "0.1.0",
-    "license": "MIT",
-    "devDependencies": {
-        "@babel/cli": "^7.12.8",
-        "cross-env": "^7.0.2",
-        "parcel": "^2.0.0-nightly.462",
-        "sass": "^1.29.0"
-    },
-    "scripts": {
-        "build": "cross-env NODE_ENV=production parcel build layout-prod.html --dist-dir ./dist --no-source-maps",
-        "build-yarn": "yarn css && yarn js",
-        "postbuild-yarn": "cp -v layout-yarn.html dist",
-        "prebuild": "rm -fr .parcel-cache dist",
-        "prebuild-yarn": "rm -rv dist",
-        "prestart": "yarn prebuild",
-        "start": "cross-env NODE_ENV=development parcel layout-dev.html --dist-dir ./dist --no-autoinstall",
-        "css": "sass styles/main.scss dist/main.css",
-        "js": "babel scripts --ignore node_modules --out-dir dist"
+  "name": "leaflet",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "alias": {
+    "leaflet": {
+      "global": "L"
     }
+  },
+  "scripts": {
+    "prebuild:npm": "rm -rv dist || true",
+    "build:npm": "npm run js && npm run css",
+    "css": "sass styles/main.scss dist/main.css",
+    "precss": "echo Compilando el SASS",
+    "prejs": "echo Compilando el JS",
+    "js": "babel scripts/main.js --out-dir dist --ignore node_modules",
+    "build": "cross-env NODE_ENV=production parcel build 'index.html' --dist-dir dist/prod --public-url ./ --no-source-maps",
+    "prebuild": "rm -fr .parcel-cache dist/prod || true",
+    "prestart": "rm -fr .parcel-cache dist/dev || true",
+    "start": "cross-env NODE_ENV=development parcel 'index.html' --dist-dir dist/dev --no-autoinstall --open"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/preset-env": "^7.23.3",
+    "@parcel/transformer-sass": "^2.10.3",
+    "cross-env": "^7.0.3",
+    "parcel": "^2.10.3"
+  }
 }
