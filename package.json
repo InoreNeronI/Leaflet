@@ -10,7 +10,7 @@
     "precss": "echo Compilando el SASS",
     "prejs": "echo Compilando el JS",
     "js": "babel scripts/main.js --out-dir dist --ignore node_modules",
-    "build": "cross-env NODE_ENV=production parcel build 'index.html' --dist-dir dist/prod --public-url /leaflet --no-source-maps",
+    "build": "cross-env NODE_ENV=production parcel build 'index.html' --dist-dir dist/prod --public-url /Leaflet --no-source-maps",
     "prebuild": "rm -fr .parcel-cache dist/prod || true",
     "prestart": "prettier . --write && rm -fr .parcel-cache dist/dev || true",
     "start": "cross-env NODE_ENV=development parcel 'index.html' --dist-dir dist/dev --no-autoinstall --open"
