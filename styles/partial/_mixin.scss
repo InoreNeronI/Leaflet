@@ -1,12 +1,12 @@
-@mixin body($cp,$cs){
-  body *{
-    &.dark{
+@mixin body($cp, $cs) {
+  body * {
+    &.dark {
       background-color: $cp;
-      color:$cs;
+      color: $cs;
     }
-    &.light{
+    &.light {
       background-color: $cs;
-      color:$cp;
+      color: $cp;
     }
   }
 }

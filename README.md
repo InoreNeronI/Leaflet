@@ -1,5 +1,4 @@
-
-### `build:npm` 
+### `build:npm`
 
 ~ builds script and style in `./dist` with Babel.js and Sass libraries.
 
@@ -13,4 +12,5 @@
 
 ~ builds `index.html` in `./dist` in 'dev' mode with Parcel.js
 
-~ generates sourcemaps and launches dev server browsable at [http://localhost:1234](http://localhost:1234)
+~ generates sourcemaps and launches dev server browsable at
+[http://localhost:1234](http://localhost:1234)

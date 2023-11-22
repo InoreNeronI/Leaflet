@@ -1,15 +1,8 @@
 {
   "name": "leaflet",
   "version": "1.0.0",
-  "license": "MIT",
-  "dependencies": {
-    "leaflet": "^1.9.4"
-  },
-  "alias": {
-    "leaflet": {
-      "global": "L"
-    }
-  },
+  "description": "Trying Babel.js, Sass & Parcel.js ",
+  "homepage": "https://github.com/InoreNeronI/Leaflet",
   "scripts": {
     "prebuild:npm": "rm -rv dist || true",
     "build:npm": "npm run js && npm run css",
@@ -17,16 +10,41 @@
     "precss": "echo Compilando el SASS",
     "prejs": "echo Compilando el JS",
     "js": "babel scripts/main.js --out-dir dist --ignore node_modules",
-    "build": "cross-env NODE_ENV=production parcel build 'index.html' --dist-dir dist/prod --public-url ./ --no-source-maps",
+    "build": "cross-env NODE_ENV=production parcel build 'index.html' --dist-dir dist/prod --public-url /leaflet --no-source-maps",
     "prebuild": "rm -fr .parcel-cache dist/prod || true",
-    "prestart": "rm -fr .parcel-cache dist/dev || true",
+    "prestart": "prettier . --write && rm -fr .parcel-cache dist/dev || true",
     "start": "cross-env NODE_ENV=development parcel 'index.html' --dist-dir dist/dev --no-autoinstall --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InoreNeronI/Leaflet.git"
+  },
+  "keywords": [],
+  "author": "Martin Mozos <martinmozos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InoreNeronI/Leaflet/issues"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/preset-env": "^7.23.3",
     "@parcel/transformer-sass": "^2.10.3",
     "cross-env": "^7.0.3",
-    "parcel": "^2.10.3"
+    "parcel": "^2.10.3",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "prettier": "3.1.0"
+  },
+  "alias": {
+    "leaflet": {
+      "global": "L"
+    }
+  },
+  "targets": {
+    "default": {
+      "context": "browser"
+    }
   }
 }

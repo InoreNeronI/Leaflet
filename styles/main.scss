@@ -1,10 +1,9 @@
-
 @import 'partial/mixin';
 @import 'partial/variables';
 
-@include body($color_primary,$color_secondary);
+@include body($color_primary, $color_secondary);
 
-body{
+body {
   color: rgba($color_primary, 0.4);
   background-color: $color_standard;
 
@@ -13,9 +12,11 @@ body{
     height: 10%;
   }
 
-  #map { height: 780px; }
+  #map {
+    height: 100%;
+  }
 
-  section {
+  main {
     background-color: inherit;
     height: 85%;
   }
